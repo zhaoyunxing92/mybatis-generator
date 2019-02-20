@@ -22,7 +22,7 @@ package org.mybatis.generator.api;
  * During the execution of code generation, there are three main operations:
  * database introspection, code generation based on the results of
  * introspection, and then merging/saving generated files. Methods
- * in this interface accordingly and in this order:
+ * in this interface accordingly and in this com.t3.ts.order:
  * <ol>
  * <li>introspectionStarted(int)</li>
  * <li>(Repeatedly) startTask(String)</li>

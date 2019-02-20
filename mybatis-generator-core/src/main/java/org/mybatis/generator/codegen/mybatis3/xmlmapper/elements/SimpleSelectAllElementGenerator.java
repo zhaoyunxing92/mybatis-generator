@@ -80,7 +80,7 @@ public class SimpleSelectAllElementGenerator extends
         boolean hasOrderBy = StringUtility.stringHasValue(orderByClause);
         if (hasOrderBy) {
             sb.setLength(0);
-            sb.append("order by "); //$NON-NLS-1$
+            sb.append("com.t3.ts.order by "); //$NON-NLS-1$
             sb.append(orderByClause);
             answer.addElement(new TextElement(sb.toString()));
         }

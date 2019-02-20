@@ -90,7 +90,7 @@ public class DatabaseIntrospector {
         }
 
         try {
-            // keep primary columns in key sequence order
+            // keep primary columns in key sequence com.t3.ts.order
             Map<Short, String> keyColumns = new TreeMap<Short, String>();
             while (rs.next()) {
                 String columnName = rs.getString("COLUMN_NAME"); //$NON-NLS-1$

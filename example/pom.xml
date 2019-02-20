@@ -11,5 +11,13 @@
 
     <artifactId>example</artifactId>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.t3.ts</groupId>
+                <artifactId>mybatis-generator-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

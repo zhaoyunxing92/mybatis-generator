@@ -3,9 +3,9 @@
  */
 package org.mybatis.generator.plugins;
 
-import org.codehaus.plexus.util.StringUtils;
 import org.mybatis.generator.api.*;
 import org.mybatis.generator.api.dom.java.*;
+import org.mybatis.generator.internal.util.StringUtility;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -69,7 +69,7 @@ public class InterFaceExtendsPlugin extends PluginAdapter {
         // 获取实体类
         FullyQualifiedJavaType entityType = new FullyQualifiedJavaType(introspectedTable.getBaseRecordType());
         // import接口
-        if (!StringUtils.isEmpty(baseMapper)) {
+        if (!StringUtility.stringHasValue(baseMapper)) {
             interfaze.getMethods().clear();
             interfaze.addImportedType(new FullyQualifiedJavaType(baseMapper));
             interfaze.addSuperInterface(new FullyQualifiedJavaType(baseMapper + "<" + entityType.getShortName() + "," + primaryKeyType + ">"));
@@ -120,8 +120,8 @@ public class InterFaceExtendsPlugin extends PluginAdapter {
         //        primaryKeyType = topLevelClass.getFields().get(0).getType().getShortName();
         // 多组件情况下，值去第一个
         primaryKeyType = introspectedTable.getPrimaryKeyColumns().get(0).getFullyQualifiedJavaType().getShortName();
-        ;
-        if (!StringUtils.isEmpty(baseModel)) {
+   
+        if (!StringUtility.stringHasValue(baseModel)) {
             // topLevelClass.
             topLevelClass.addImportedType(baseModel);
             topLevelClass.setSuperClass(new FullyQualifiedJavaType(baseModel + "<" + primaryKeyType + ">"));

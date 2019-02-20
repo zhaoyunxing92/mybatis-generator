@@ -21,8 +21,76 @@
         <maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.lugin.api.version>2.0</maven.lugin.api.version>
-        <maven.plugin.annotations.version>3.2</maven.plugin.annotations.version>
+        <maven.plugin.annotations.version>3.4</maven.plugin.annotations.version>
+        <hsqldb.version>2.3.4</hsqldb.version>
+        <javaparser.core.version>2.4.0</javaparser.core.version>
+
+        <t3.mybatis.generator.version>${project.version}</t3.mybatis.generator.version>
     </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>log4j</groupId>
+                <artifactId>log4j</artifactId>
+                <version>1.2.17</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.ant</groupId>
+                <artifactId>ant</artifactId>
+                <version>1.9.7</version>
+            </dependency>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>4.12</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.hsqldb</groupId>
+                <artifactId>hsqldb</artifactId>
+                <version>${hsqldb.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.maven</groupId>
+                <artifactId>maven-plugin-api</artifactId>
+                <version>3.3.9</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.maven.plugin-tools</groupId>
+                <artifactId>maven-plugin-annotations</artifactId>
+                <version>${maven.plugin.annotations.version}</version>
+                <scope>provided</scope>
+            </dependency>
+            <!--<dependency>-->
+            <!--<groupId>org.apache.maven</groupId>-->
+            <!--<artifactId>maven-core</artifactId>-->
+            <!--<version>3.3.9</version>-->
+            <!--<scope>provided</scope>-->
+            <!--</dependency>-->
+
+            <!--<dependency>-->
+            <!--<groupId>org.mybatis</groupId>-->
+            <!--<artifactId>mybatis</artifactId>-->
+            <!--<version>3.4.0</version>-->
+            <!--</dependency>-->
+            <!-- TODO: Raising above 2.4.0 required jdk 8 usage -->
+            <dependency>
+                <groupId>com.github.javaparser</groupId>
+                <artifactId>javaparser-core</artifactId>
+                <version>${javaparser.core.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.t3.ts</groupId>
+                <artifactId>mybatis-generator-core</artifactId>
+                <version>${t3.mybatis.generator.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
 
     <build>
         <resources>
@@ -38,19 +106,15 @@
                 </includes>
             </resource>
         </resources>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>com.t3.ts</groupId>
+                    <artifactId>mybatis-generator-plugin</artifactId>
+                    <version>${t3.mybatis.generator.version}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
     </build>
 
-    <repositories>
-        <repository>
-            <id>t3repostory</id>
-            <url>http://47.99.198.80/repository/maven-public</url>
-            <snapshots>
-                <enabled>true</enabled>
-                <updatePolicy>always</updatePolicy>
-            </snapshots>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-        </repository>
-    </repositories>
 </project>

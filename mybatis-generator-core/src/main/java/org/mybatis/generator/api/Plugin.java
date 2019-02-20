@@ -54,7 +54,7 @@ import org.mybatis.generator.config.Context;
  * plugins. If the same plugin is specified in multiple contexts, then each
  * context will hold a unique instance of the plugin.
  * <p>
- * Plugins are called, and initialized, in the same order they are specified in
+ * Plugins are called, and initialized, in the same com.t3.ts.order they are specified in
  * the configuration.
  * <p>
  * The clientXXX, modelXXX, and sqlMapXXX methods are called by the code

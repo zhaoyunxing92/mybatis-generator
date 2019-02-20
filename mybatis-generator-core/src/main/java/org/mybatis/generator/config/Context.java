@@ -373,7 +373,7 @@ public class Context extends PropertyHolder {
 
     // methods related to code generation.
     //
-    // Methods should be called in this order:
+    // Methods should be called in this com.t3.ts.order:
     //
     // 1. getIntrospectionSteps()
     // 2. introspectTables()

@@ -97,7 +97,7 @@ public class AnnotatedSelectAllMethodGenerator extends
         if (hasOrderBy) {
             sb.setLength(0);
             javaIndent(sb, 1);
-            sb.append("\"order by "); //$NON-NLS-1$
+            sb.append("\"com.t3.ts.order by "); //$NON-NLS-1$
             sb.append(orderByClause);
             sb.append('\"');
             method.addAnnotation(sb.toString());

@@ -88,7 +88,7 @@ public class SelectByExampleWithBLOBsElementGenerator extends
         isNotNullElement
                 .addAttribute(new Attribute("property", "orderByClause")); //$NON-NLS-1$ //$NON-NLS-2$
         isNotNullElement
-                .addElement(new TextElement("order by $orderByClause$")); //$NON-NLS-1$
+                .addElement(new TextElement("com.t3.ts.order by $orderByClause$")); //$NON-NLS-1$
         isParameterPresenteElement.addElement(isNotNullElement);
 
         if (context.getPlugins()

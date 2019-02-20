@@ -72,7 +72,7 @@ public class SelectByExampleWithoutBLOBsElementGenerator extends
 
         ifElement = new XmlElement("if"); //$NON-NLS-1$
         ifElement.addAttribute(new Attribute("test", "orderByClause != null")); //$NON-NLS-1$ //$NON-NLS-2$
-        ifElement.addElement(new TextElement("order by ${orderByClause}")); //$NON-NLS-1$
+        ifElement.addElement(new TextElement("com.t3.ts.order by ${orderByClause}")); //$NON-NLS-1$
         answer.addElement(ifElement);
 
         if (context.getPlugins()
