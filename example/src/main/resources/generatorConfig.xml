@@ -25,7 +25,7 @@
             <property name="corp" value="ccclubs"/> <!--企业名称，签名用户的-->
         </commentGenerator>
 
-        <!-- !!!! Database Configurations !!!! -->
+        <!-- Database Configurations -->
         <jdbcConnection
                 driverClass="com.mysql.jdbc.Driver"
                 connectionURL="jdbc:mysql://127.0.0.1:3306/cherry_tomato?useUnicode=true&amp;characterEncoding=utf8"
@@ -36,7 +36,7 @@
             <property name="forceBigDecimals" value="false"/>
         </javaTypeResolver>
 
-        <!-- !!!! Model Configurations !!!! -->
+        <!-- Model Configurations -->
         <!-- 生成实体类地址 -->
         <javaModelGenerator targetPackage="com.sunny.mybatis.appTest.model" targetProject="src/main/java">
             <!-- 是否对model添加 构造函数 -->
@@ -63,7 +63,7 @@
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
 
-        <!-- !!!! Table Configurations !!!! -->
+        <!-- Table Configurations -->
         <table tableName="ev_model" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
                enableUpdateByExample="false">
             <!--<generatedKey column="id" sqlStatement="MySql" identity="true"/>-->
