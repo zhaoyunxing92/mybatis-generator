@@ -1,2 +1,2 @@
-# t3-mybatis-generator
+# mybatis-generator
 mybatis插件
